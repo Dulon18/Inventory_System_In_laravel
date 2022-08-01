@@ -12,5 +12,13 @@ class Employee extends Model
       
         'name',
         'email',
+        'phone',
+        'address',
+        'city',
+        'nid_no',
+        'experience',
+        'salary',
+        'image',
+        'vacation'
     ];
 }

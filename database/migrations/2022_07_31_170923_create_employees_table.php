@@ -20,8 +20,9 @@ return new class extends Migration
             $table->string('phone');
             $table->string('address');
             $table->string('city');
+            $table->string('nid_no');
             $table->string('experience');
-            $table->string('salary');
+            $table->decimal('salary',10,3);
             $table->string('image');
             $table->string('vacation');
             $table->timestamps();

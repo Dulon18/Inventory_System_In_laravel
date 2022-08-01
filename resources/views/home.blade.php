@@ -19,6 +19,9 @@
 <link rel="stylesheet" href="{{url('assets/modules/datatables/DataTables-1.10.16/css/dataTables.bootstrap4.min.css')}}">
 <link rel="stylesheet" href="{{url('assets/modules/datatables/Select-1.2.4/css/select.bootstrap4.min.css')}}">
 
+<!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+ integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
 <!-- Template CSS -->
 <link rel="stylesheet" href="{{url('assets/css/style.min.css')}}">
 <link rel="stylesheet" href="{{url('assets/css/components.min.css')}}">
@@ -59,7 +62,11 @@
 <!-- General JS Scripts -->
 <script src="{{url('assets/bundles/lib.vendor.bundle.js')}}"></script>
 <script src="{{url('js/CodiePie.js')}}"></script>
-
+<script>
+ $(document).ready( function () {
+    $('#table-1').DataTable();
+} );
+</script>
 <!-- JS Libraies -->
 <script src="{{url('assets/modules/apexcharts/apexcharts.min.js')}}"></script>
 <script src="{{url('assets/modules/simple-weather/jquery.simpleWeather.min.js')}}"></script>
@@ -72,6 +79,9 @@
 <script src="{{url('assets/modules/datatables/Select-1.2.4/js/dataTables.select.min.js')}}"></script>
 <script src="{{url('assets/modules/jquery-ui/jquery-ui.min.js')}}"></script>
 
+<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+ integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
 <!-- Page Specific JS File -->
 <script src="{{url('js/page/index-0.js')}}"></script>
 

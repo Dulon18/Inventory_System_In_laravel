@@ -32,5 +32,6 @@ Route::group(['middleware'=>['auth','admin']],function ()
  //Employee routes
  Route::get('/list',[EmployeeController::class,'list'])->name('employeesList');
  Route::get('/create',[EmployeeController::class,'create'])->name('employeeAdd');
+ Route::post('/employee/store',[EmployeeController::class,'store'])->name('employeeStore');
 
 });
