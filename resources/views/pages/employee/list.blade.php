@@ -8,9 +8,17 @@
                     <div class="breadcrumb-item"><a href="">  Manage Employees</a></div>
                 </div>
             </div>
+            <!-- message Show start -->
+            @if(session()->has('success'))
+                    <p class="alert alert-success">
+                      <button type="button" class="close" data-bs-dismiss="alert">x</button>
+                      {{session()->get('success')}}</p>
+                  @endif
+                <!-- message Show end -->
             <div class="buttons">
                 <a href="{{route('employeeAdd')}}" class="btn btn-primary"><i class="fas fa-plus-circle"></i> Add New Employee </a>
             </div>
+
             <!-- table start -->
             <div class="section-body">        
              <div class="row">
@@ -59,8 +67,8 @@
                                                 </td>
                                                 <td>
                                                 <a href="#" class="btn btn-secondary">Details</a>
-                                                <a href="#" class="btn btn-info">Edit</a>
-                                                <a href="#" class="btn btn-danger">Delete</a>
+                                                <a href="{{route('employeeEdit',$employee->id)}}" class="btn btn-info">Edit</a>
+                                                <a href="{{route('employeeDelete',$employee->id)}}" class="btn btn-danger" id="swal-6">Delete</a>
                                                 </td>
                                                 
                                                 </tr>  
