@@ -1,5 +1,10 @@
 @extends('home')
 @section('content')
+@if(session()->has('message'))
+                <p class="alert alert-success">
+                    {{session()->get('message')}}
+                </p>
+            @endif
 <section class="section">
                 <div class="section-header">
                     <h1>Dashboard</h1>

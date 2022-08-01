@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\LoginController;
-
+use App\Http\Controllers\EmployeeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,13 +22,15 @@ Route::post('/dologin',[LoginController::class,'doLogin'])->name('dologin');
 
 Route::group(['middleware'=>['auth','admin']],function ()
 {
-    Route::get('/dashboard',function(){
+    Route::get('/',function(){
         return view('pages.dashboard');
     })->name('dashboard');   
 
-//  Route::get('/',[LoginController::class,'home'])->name('home');
+//admin logout
+ Route::get('/logout',[LoginController::class,'logout'])->name('admin.logout');
 
-Route::get('/logout',[LoginController::class,'logout'])->name('admin.logout');
-
+ //Employee routes
+ Route::get('/list',[EmployeeController::class,'list'])->name('employeesList');
+ Route::get('/create',[EmployeeController::class,'create'])->name('employeeAdd');
 
 });

@@ -15,9 +15,10 @@
 <link rel="stylesheet" href="{{url('assets/modules/weather-icon/css/weather-icons.min.css')}}">
 <link rel="stylesheet" href="{{url('assets/modules/weather-icon/css/weather-icons-wind.min.css')}}">
 <link rel="stylesheet" href="{{url('assets/modules/summernote/summernote-bs4.css')}}">
-<!-- CSS only -->
-<!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" r
-el="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous"> -->
+<link rel="stylesheet" href="{{url('assets/modules/datatables/datatables.min.css')}}">
+<link rel="stylesheet" href="{{url('assets/modules/datatables/DataTables-1.10.16/css/dataTables.bootstrap4.min.css')}}">
+<link rel="stylesheet" href="{{url('assets/modules/datatables/Select-1.2.4/css/select.bootstrap4.min.css')}}">
+
 <!-- Template CSS -->
 <link rel="stylesheet" href="{{url('assets/css/style.min.css')}}">
 <link rel="stylesheet" href="{{url('assets/css/components.min.css')}}">
@@ -46,7 +47,7 @@ el="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5A
         <!-- Start app Footer part -->
         <footer class="main-footer">
             <div class="footer-left">
-                 <div class="bullet"></div>  <a href="templateshub.net">Templates Hub</a>
+                 <div class="bullet"></div>  <a href="#">ADC</a>
             </div>
             <div class="footer-right">
             
@@ -56,24 +57,26 @@ el="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5A
 </div>
 
 <!-- General JS Scripts -->
-<script src="assets/bundles/lib.vendor.bundle.js"></script>
-<script src="js/CodiePie.js"></script>
+<script src="{{url('assets/bundles/lib.vendor.bundle.js')}}"></script>
+<script src="{{url('js/CodiePie.js')}}"></script>
 
 <!-- JS Libraies -->
-<script src="assets/modules/apexcharts/apexcharts.min.js"></script>
-<script src="assets/modules/simple-weather/jquery.simpleWeather.min.js"></script>
-<script src="assets/modules/jqvmap/dist/jquery.vmap.min.js"></script>
-<script src="assets/modules/jqvmap/dist/maps/jquery.vmap.world.js"></script>
-<script src="assets/modules/summernote/summernote-bs4.js"></script>
-<script src="assets/modules/chocolat/dist/js/jquery.chocolat.min.js"></script>
+<script src="{{url('assets/modules/apexcharts/apexcharts.min.js')}}"></script>
+<script src="{{url('assets/modules/simple-weather/jquery.simpleWeather.min.js')}}"></script>
+<script src="{{url('assets/modules/jqvmap/dist/jquery.vmap.min.js')}}"></script>
+<script src="{{url('assets/modules/jqvmap/dist/maps/jquery.vmap.world.js')}}"></script>
+<script src="{{url('assets/modules/summernote/summernote-bs4.js')}}"></script>
+<script src="{{url('assets/modules/chocolat/dist/js/jquery.chocolat.min.js')}}"></script>
+<script src="{{url('assets/modules/datatables/datatables.min.js')}}"></script>
+<script src="{{url('assets/modules/datatables/DataTables-1.10.16/js/dataTables.bootstrap4.min.js')}}"></script>
+<script src="{{url('assets/modules/datatables/Select-1.2.4/js/dataTables.select.min.js')}}"></script>
+<script src="{{url('assets/modules/jquery-ui/jquery-ui.min.js')}}"></script>
 
 <!-- Page Specific JS File -->
-<script src="js/page/index-0.js"></script>
+<script src="{{url('js/page/index-0.js')}}"></script>
 
 <!-- Template JS File -->
-<script src="js/scripts.js"></script>
-<script src="js/custom.js"></script>
+<script src="{{url('js/scripts.js')}}"></script>
+<script src="{{url('js/custom.js')}}"></script>
 </body>
-
-<!-- index-0.html  Tue, 07 Jan 2020 03:35:42 GMT -->
 </html>
