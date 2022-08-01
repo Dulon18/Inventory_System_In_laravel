@@ -16,4 +16,9 @@
 </p>
 
 
+## #Employee Create Form
+
+<p align="center">
+<img src="https://user-images.githubusercontent.com/80118217/182120495-eabeb2bb-f6c9-4f48-94e2-6a3c65a14156.JPG">
+</p>
 
