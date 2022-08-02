@@ -65,6 +65,13 @@ class EmployeeController extends Controller
          return redirect()->back()->with('success','Employee Added Successfully..!!');
     }
 
+    public function details($id)
+    {
+        $employee=Employee::find($id);
+        return view('pages.employee.details',compact('employee'));
+
+    }
+
     public function edit($id)
     {
         $employee=Employee::find($id);

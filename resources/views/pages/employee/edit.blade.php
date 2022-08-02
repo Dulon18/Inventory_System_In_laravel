@@ -4,8 +4,8 @@
             <div class="section-header">
                 <h1>Employee</h1>
                 <div class="section-header-breadcrumb">
-                    <div class="breadcrumb-item active"><a href="#">Employee</a></div>
-                    <div class="breadcrumb-item"><a href="#">Update Employee Info</a></div>
+                    <div class="breadcrumb-item active"><a class="nav-link"  href="{{route('employeesList')}}">Employee</a></div>
+                    <div class="breadcrumb-item">Update Employee Info</div>
                 </div>
             </div>
              <!-- message Show start -->

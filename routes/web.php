@@ -33,6 +33,7 @@ Route::group(['middleware'=>['auth','admin']],function ()
  Route::get('/list',[EmployeeController::class,'list'])->name('employeesList');
  Route::get('/create',[EmployeeController::class,'create'])->name('employeeAdd');
  Route::post('/employee/store',[EmployeeController::class,'store'])->name('employeeStore');
+ Route::get('/employee/details/{id}',[EmployeeController::class,'details'])->name('employeeDetails');
  Route::get('/employee/edit/{id}',[EmployeeController::class,'edit'])->name('employeeEdit');
  Route::put('/employee/update/{id}',[EmployeeController::class,'update'])->name('employeeUpdate');
  Route::get('/employee/delete/{id}',[EmployeeController::class,'delete'])->name('employeeDelete');
