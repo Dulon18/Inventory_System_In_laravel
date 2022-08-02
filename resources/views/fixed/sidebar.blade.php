@@ -30,7 +30,7 @@
                     <li class="dropdown">
                         <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-user"></i> <span>Customer</span></a>
                         <ul class="dropdown-menu">
-                            <li><a class="nav-link" href="{{route('customerAdd')}}">Add Customer</a></li>                           
+                            <li><a class="nav-link" href="{{route('customerAdd')}}">Add Customer</a></li>
                             <li><a class="nav-link" href="{{route('customerList')}}">Manage Customer</a></li>
                         </ul>
                     </li>
@@ -38,8 +38,8 @@
                     <li class="dropdown">
                         <a href="#" class="nav-link has-dropdown"><i class="fas fa-th"></i> <span>Suppliers</span></a>
                         <ul class="dropdown-menu">
-                            <li><a class="nav-link" href="#">Add</a></li>                 
-                            <li><a class="nav-link" href="#">Add</a></li>                   
+                            <li><a class="nav-link" href="{{route('supplierAdd')}}">Add Spplier</a></li>
+                            <li><a class="nav-link" href="{{route('supplierList')}}">All Sppliers</a></li>
                         </ul>
                     </li>
 

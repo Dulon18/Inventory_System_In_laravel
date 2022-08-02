@@ -3,6 +3,7 @@
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\SupplierController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -31,6 +32,7 @@ Route::group(['middleware'=>['auth','admin']],function ()
  Route::get('/logout',[LoginController::class,'logout'])->name('admin.logout');
 
  //Employee routes
+
  Route::get('/list',[EmployeeController::class,'list'])->name('employeesList');
  Route::get('/create',[EmployeeController::class,'create'])->name('employeeAdd');
  Route::post('/employee/store',[EmployeeController::class,'store'])->name('employeeStore');
@@ -49,5 +51,15 @@ Route::group(['middleware'=>['auth','admin']],function ()
  Route::get('/customer/edit/{id}',[CustomerController::class,'edit'])->name('customerEdit');
  Route::put('/customer/update/{id}',[CustomerController::class,'update'])->name('customerUpdate');
  Route::get('/customer/delete/{id}',[CustomerController::class,'delete'])->name('customerDelete');
+
+ // Supplier route
+
+ Route::get('/supplier/list',[SupplierController::class,'list'])->name('supplierList');
+ Route::get('/supplier/create',[SupplierController::class,'create'])->name('supplierAdd');
+ Route::post('/supplier/store',[SupplierController::class,'store'])->name('supplierStore');
+ Route::get('/supplier/details/{id}',[SupplierController::class,'details'])->name('supplierDetails');
+ Route::get('/supplier/edit/{id}',[SupplierController::class,'edit'])->name('supplierEdit');
+ Route::put('/supplier/update/{id}',[SupplierController::class,'update'])->name('supplierUpdate');
+ Route::get('/supplier/delete/{id}',[SupplierController::class,'delete'])->name('supplierDelete');
 
 });
