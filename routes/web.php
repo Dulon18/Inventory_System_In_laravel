@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\EmployeeController;
+use App\Http\Controllers\CustomerController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -37,5 +38,16 @@ Route::group(['middleware'=>['auth','admin']],function ()
  Route::get('/employee/edit/{id}',[EmployeeController::class,'edit'])->name('employeeEdit');
  Route::put('/employee/update/{id}',[EmployeeController::class,'update'])->name('employeeUpdate');
  Route::get('/employee/delete/{id}',[EmployeeController::class,'delete'])->name('employeeDelete');
+
+
+ //Customer routes
+
+ Route::get('/customer/list',[CustomerController::class,'list'])->name('customerList');
+ Route::get('/customer/create',[CustomerController::class,'create'])->name('customerAdd');
+ Route::post('/customer/store',[CustomerController::class,'store'])->name('customerStore');
+ Route::get('/customer/details/{id}',[CustomerController::class,'details'])->name('customerDetails');
+ Route::get('/customer/edit/{id}',[CustomerController::class,'edit'])->name('customerEdit');
+ Route::put('/customer/update/{id}',[CustomerController::class,'update'])->name('customerUpdate');
+ Route::get('/customer/delete/{id}',[CustomerController::class,'delete'])->name('customerDelete');
 
 });
