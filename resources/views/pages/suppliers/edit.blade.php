@@ -81,7 +81,7 @@
 
                                     <div class="form-group">
                                         <label>Supplier Type</label>
-                                        <select class="form-control select2" name="type" value="{{$supplier->type}}">                                                    
+                                        <select class="form-control select2" name="type" >                                                    
                                                <option value="{{$supplier->type}}">{{$supplier->type}}</option> 
                                                <option value="Distributor">Distributor</option>
                                               <option value="Whole Seller">Whole Seller</option>

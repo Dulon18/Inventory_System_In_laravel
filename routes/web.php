@@ -4,6 +4,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\SupplierController;
+use App\Http\Controllers\SalaryController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -31,7 +32,7 @@ Route::group(['middleware'=>['auth','admin']],function ()
 //admin logout
  Route::get('/logout',[LoginController::class,'logout'])->name('admin.logout');
 
- //Employee routes
+ //Employee routes----------------------------------------------------------------------------------------
 
  Route::get('/list',[EmployeeController::class,'list'])->name('employeesList');
  Route::get('/create',[EmployeeController::class,'create'])->name('employeeAdd');
@@ -42,7 +43,7 @@ Route::group(['middleware'=>['auth','admin']],function ()
  Route::get('/employee/delete/{id}',[EmployeeController::class,'delete'])->name('employeeDelete');
 
 
- //Customer routes
+ //Customer routes----------------------------------------------------------------------------------------
 
  Route::get('/customer/list',[CustomerController::class,'list'])->name('customerList');
  Route::get('/customer/create',[CustomerController::class,'create'])->name('customerAdd');
@@ -52,7 +53,7 @@ Route::group(['middleware'=>['auth','admin']],function ()
  Route::put('/customer/update/{id}',[CustomerController::class,'update'])->name('customerUpdate');
  Route::get('/customer/delete/{id}',[CustomerController::class,'delete'])->name('customerDelete');
 
- // Supplier route
+ // Supplier route ------------------------------------------------------------------------------------------
 
  Route::get('/supplier/list',[SupplierController::class,'list'])->name('supplierList');
  Route::get('/supplier/create',[SupplierController::class,'create'])->name('supplierAdd');
@@ -62,4 +63,13 @@ Route::group(['middleware'=>['auth','admin']],function ()
  Route::put('/supplier/update/{id}',[SupplierController::class,'update'])->name('supplierUpdate');
  Route::get('/supplier/delete/{id}',[SupplierController::class,'delete'])->name('supplierDelete');
 
+ //salary routes --------------------------------------------------------------------------------------------
+
+ Route::get('/salary/list',[SalaryController::class,'list'])->name('salaryList');
+ Route::get('/salary/create',[SalaryController::class,'create'])->name('salaryAdd');
+ Route::post('/salary/store',[SalaryController::class,'store'])->name('salaryStore');
+ Route::get('/salary/details/{id}',[SalaryController::class,'details'])->name('salaryDetails');
+ Route::get('/salary/edit/{id}',[SalaryController::class,'edit'])->name('salaryEdit');
+ Route::put('/salary/update/{id}',[SalaryController::class,'update'])->name('salaryUpdate');
+ Route::get('/salary/delete/{id}',[SalaryController::class,'delete'])->name('salaryDelete');
 });
