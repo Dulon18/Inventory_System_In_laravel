@@ -5,6 +5,8 @@ use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\SupplierController;
 use App\Http\Controllers\SalaryController;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -72,4 +74,24 @@ Route::group(['middleware'=>['auth','admin']],function ()
  Route::get('/salary/edit/{id}',[SalaryController::class,'edit'])->name('salaryEdit');
  Route::put('/salary/update/{id}',[SalaryController::class,'update'])->name('salaryUpdate');
  Route::get('/salary/delete/{id}',[SalaryController::class,'delete'])->name('salaryDelete');
+
+
+//category routes----------------------------------------------------------------------------------------------
+
+Route::get('/category/list',[CategoryController::class,'list'])->name('categoryList');
+Route::get('/category/create',[CategoryController::class,'create'])->name('categoryAdd');
+Route::post('/category/store',[CategoryController::class,'store'])->name('categoryStore');
+Route::get('/category/edit/{id}',[CategoryController::class,'edit'])->name('categoryEdit');
+Route::put('/category/update/{id}',[CategoryController::class,'update'])->name('categoryUpdate');
+Route::get('/category/delete/{id}',[CategoryController::class,'delete'])->name('categoryDelete');
+
+// All Product routes here----------------------------------------------------------------------------------------------
+
+Route::get('/product/list',[ProductController::class,'list'])->name('productList');
+Route::get('/product/create',[ProductController::class,'create'])->name('productAdd');
+Route::post('/product/store',[ProductController::class,'store'])->name('productStore');
+Route::get('/product/edit/{id}',[ProductController::class,'edit'])->name('productEdit');
+Route::put('/product/update/{id}',[ProductController::class,'update'])->name('productUpdate');
+Route::get('/product/delete/{id}',[ProductController::class,'delete'])->name('productDelete');
+
 });
