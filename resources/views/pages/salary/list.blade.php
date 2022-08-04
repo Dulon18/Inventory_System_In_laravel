@@ -27,16 +27,16 @@
                                 <div class="card-body">
                                     <div class="table-responsive">
                                         <table class="table table-striped v_center" id="table-1">
-                                            <thead>
+                                            <thead class="bg-primary">
                                                 <tr>
-                                                <th class="text-center">#No.</th>
-                                                <th>Name</th>
-                                                <th>Image</th>
-                                                <th>Month</th>
-                                                <th>Year</th> 
-                                                <th>Salary</th>                                            
-                                                <th>Advanced Money</th>
-                                                <th>Action</th>
+                                                <th class="text-white">#No.</th>
+                                                <th class="text-white">Name</th>
+                                                <th class="text-white">Image</th>
+                                                <th class="text-white">Month</th>
+                                                <th class="text-white">Year</th> 
+                                                <th class="text-white">Salary</th>                                            
+                                                <th class="text-white">Advanced Money</th>
+                                                <th class="text-white">Action</th>
                                                 </tr>
                                             </thead>
                                             <tbody>

@@ -32,7 +32,10 @@
                                             <label for="inputEmail4">Category</label>
                                             <select value="{{$product->category_id}}" class="form-control select2" name="cat_id"  required="">
                                                         @foreach($categories as $category)
-                                                            <option value="{{$category->id}}">{{$category->name}}</option>
+                                                            <option value="{{$category->id}}"
+                                                            <?php if($product->category_id == $category->id)
+                                                            {echo "selected";}?>
+                                                            >{{$category->name}}</option>
                                                        @endforeach
                                                     </select>
                                         </div>
@@ -40,7 +43,10 @@
                                             <label for="inputEmail4">Supplier</label>
                                             <select value="{{$product->supplier_id}}" class="form-control select2" name="sup_id"  required="">       
                                                         @foreach($suppliers as $supplier)
-                                                            <option value="{{$supplier->id}}">{{$supplier->name}}</option>
+                                                            <option value="{{$supplier->id}}"
+                                                            <?php if($product->supplier_id == $supplier->id)
+                                                            {echo "selected";}?>>
+                                                                {{$supplier->name}}</option>
                                                        @endforeach
                                                     </select>
                                         </div>

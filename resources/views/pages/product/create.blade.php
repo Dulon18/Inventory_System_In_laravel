@@ -4,7 +4,7 @@
             <div class="section-header">
                 <h1>Product</h1>
                 <div class="section-header-breadcrumb">
-                    <div class="breadcrumb-item active"><a class="nav-link" href="{{route('customerList')}}">Product</a></div>
+                    <div class="breadcrumb-item active"><a class="nav-link" href="{{route('productList')}}">Product</a></div>
                     <div class="breadcrumb-item"> Add Product</div>
                 </div>
             </div>
@@ -18,8 +18,8 @@
                             <div class="card">
                             <form action="{{route('productStore')}}" class="needs-validation" novalidate="" method="POST" enctype="multipart/form-data">
                                 @csrf
-                                <div class="card-header">
-                                    <h4 class="text-center">Product Form</h4>
+                                <div class="card-header bg-primary">
+                                    <h4 class="text-white ">Product Form</h4>
                                 </div>
                                 <div class="card-body">
                                 <div class="form-group">

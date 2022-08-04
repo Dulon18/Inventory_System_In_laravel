@@ -27,11 +27,11 @@
                                 <div class="card-body">
                                     <div class="table-responsive">
                                         <table class="table table-striped v_center" id="table-1">
-                                            <thead>
+                                            <thead class="bg-primary">
                                                 <tr>
-                                                <th>#No.</th>
-                                                <th>Name</th>
-                                                <th>Action</th>
+                                                <th class="text-white">#No.</th>
+                                                <th class="text-white">Name</th>
+                                                <th class="text-white">Action</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
