@@ -93,5 +93,6 @@ Route::post('/product/store',[ProductController::class,'store'])->name('productS
 Route::get('/product/edit/{id}',[ProductController::class,'edit'])->name('productEdit');
 Route::put('/product/update/{id}',[ProductController::class,'update'])->name('productUpdate');
 Route::get('/product/delete/{id}',[ProductController::class,'delete'])->name('productDelete');
+Route::get('/product/details/{id}',[ProductController::class,'details'])->name('productDetails');
 
 });

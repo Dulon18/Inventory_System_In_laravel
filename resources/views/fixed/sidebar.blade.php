@@ -55,8 +55,8 @@
                         <a href="#" class="nav-link has-dropdown"><i class="fas fa-clipboard"></i> <span>Product</span></a>
                         <ul class="dropdown-menu">
                             <li><a class="nav-link" href="{{route('categoryList')}}">Category</a></li>
-                            <li><a class="nav-link" href="{{route('salaryAdd')}}">Add Product</a></li>
-                            <li><a class="nav-link" href="{{route('salaryList')}}">All Product List</a></li>
+                            <li><a class="nav-link" href="{{route('productAdd')}}">Add Product</a></li>
+                            <li><a class="nav-link" href="{{route('productList')}}">All Product List</a></li>
                         </ul>
                     </li>
 

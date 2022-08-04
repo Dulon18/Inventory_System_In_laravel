@@ -61,7 +61,7 @@
                                                    
                                                     </select>
                                             <div class="invalid-feedback">
-                                                Oh no! Email is invalid.
+                                                Oh no! month is required.
                                             </div>
                                         </div>
                                         <div class="form-group col-md-6">
