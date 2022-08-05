@@ -7,6 +7,7 @@ use App\Http\Controllers\SupplierController;
 use App\Http\Controllers\SalaryController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\AttendanceController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -94,5 +95,17 @@ Route::get('/product/edit/{id}',[ProductController::class,'edit'])->name('produc
 Route::put('/product/update/{id}',[ProductController::class,'update'])->name('productUpdate');
 Route::get('/product/delete/{id}',[ProductController::class,'delete'])->name('productDelete');
 Route::get('/product/details/{id}',[ProductController::class,'details'])->name('productDetails');
+
+// Attendance routes ----------------------------------------------------------------------------------------------------
+
+Route::get('/attendance/list',[AttendanceController::class,'list'])->name('attendanceList');
+Route::get('/attendance/take',[AttendanceController::class,'take'])->name('attendanceTake');
+Route::post('/attendance/store',[AttendanceController::class,'store'])->name('attendanceStore');
+Route::get('/attendance/edit/{id}',[AttendanceController::class,'edit'])->name('attendanceEdit');
+Route::put('/attendance/update/{id}',[AttendanceController::class,'update'])->name('attendanceUpdate');
+// Route::get('/attendance/delete/{id}',[AttendanceController::class,'delete'])->name('attendanceDelete');
+
+
+
 
 });

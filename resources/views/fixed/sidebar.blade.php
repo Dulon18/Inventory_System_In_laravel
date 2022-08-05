@@ -60,6 +60,33 @@
                         </ul>
                     </li>
 
+                    <li class="dropdown">
+                        <a href="#" class="nav-link has-dropdown"><i class="fas fa-clipboard"></i> <span>Attendance</span></a>
+                        <ul class="dropdown-menu">
+                            
+                            <li><a class="nav-link" href="{{route('attendanceTake')}}">Take Attendance</a></li>
+                            <li><a class="nav-link" href="{{route('attendanceList')}}">All Attendance</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown">
+                        <a href="#" class="nav-link has-dropdown"><i class="fas fa-clipboard"></i> <span>Sales Report</span></a>
+                        <ul class="dropdown-menu">
+                            <li><a class="nav-link" href="{{route('categoryList')}}">Category</a></li>
+                            <li><a class="nav-link" href="{{route('productAdd')}}">Add Product</a></li>
+                            <li><a class="nav-link" href="{{route('productList')}}">All Product List</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown">
+                        <a href="#" class="nav-link has-dropdown"><i class="fas fa-cog"></i> <span>Setting</span></a>
+                        <ul class="dropdown-menu">
+                            <li><a class="nav-link" href="{{route('categoryList')}}">Category</a></li>
+                            <li><a class="nav-link" href="{{route('productAdd')}}">Add Product</a></li>
+                            <li><a class="nav-link" href="{{route('productList')}}">All Product List</a></li>
+                        </ul>
+                    </li>
+
                 </ul>
            
             </aside>
