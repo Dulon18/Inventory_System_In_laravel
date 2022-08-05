@@ -102,7 +102,7 @@ Route::get('/attendance/list',[AttendanceController::class,'list'])->name('atten
 Route::get('/attendance/take',[AttendanceController::class,'take'])->name('attendanceTake');
 Route::post('/attendance/store',[AttendanceController::class,'store'])->name('attendanceStore');
 Route::get('/attendance/edit/{id}',[AttendanceController::class,'edit'])->name('attendanceEdit');
-Route::put('/attendance/update/{id}',[AttendanceController::class,'update'])->name('attendanceUpdate');
+Route::post('/attendance/update',[AttendanceController::class,'update'])->name('attendanceUpdate');
 // Route::get('/attendance/delete/{id}',[AttendanceController::class,'delete'])->name('attendanceDelete');
 
 

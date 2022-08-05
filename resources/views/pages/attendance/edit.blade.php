@@ -29,7 +29,7 @@
                                 <div class="card-body">
                                     <div class="table-responsive">
                                             <a type="button" href="{{route('attendanceList')}}"class="btn btn-danger">Back</a>
-                                            <h5 class="text-right m-3">Today : {{date('dM Y')}}</h5>
+                                            <h5 class="text-right m-3">Date: {{$date->attendance_date}}</h5>
                                         <table class="table table-striped v_center" >
                                             <thead class="bg-primary">
                                                 <tr>
@@ -40,10 +40,9 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                            <form action="{{route('attendanceStore')}}" method="POST">
+                                            <form action="{{route('attendanceUpdate')}}" method="POST">
                                             @csrf
-                                            @method('put')
-                                             @foreach($date as $key=>$employee)
+                                             @foreach($data as $key=>$employee)
                                                 <tr>
                                                 <td>
                                                     {{$key+1}}
@@ -52,7 +51,7 @@
                                                 <td>
                                                     <img alt="image" src="{{url('/storage/'.$employee->image)}}" class="rounded-circle" width="50" data-toggle="tooltip" title="{{$employee->name}}">
                                                 </td>
-                                                <input type="hidden" name="emp_id[]" value="{{$employee->id}}">
+                                                <input type="hidden" name="id[]" value="{{$employee->id}}">
                                                 <td>
                                                         <input type="radio" name="attendance[{{$employee->id}}]" value="present" 
                                                         <?php 
