@@ -2,10 +2,10 @@
 @section('content')
 <section class="section">
             <div class="section-header">
-                <h1>Category</h1>
+                <h1>Attendance</h1>
                 <div class="section-header-breadcrumb">
-                    <div class="breadcrumb-item active"><a class="nav-link" href="#">Product Category</a></div>
-                    <div class="breadcrumb-item">Category</div>
+                    <div class="breadcrumb-item active"><a class="nav-link" href="#">Employee Attendance</a></div>
+                    <div class="breadcrumb-item">Attendance List</div>
                 </div>
             </div>
             <!-- message Show start -->

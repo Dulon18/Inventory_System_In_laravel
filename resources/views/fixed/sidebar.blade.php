@@ -78,13 +78,8 @@
                         </ul>
                     </li>
 
-                    <li class="dropdown">
-                        <a href="#" class="nav-link has-dropdown"><i class="fas fa-cog"></i> <span>Setting</span></a>
-                        <ul class="dropdown-menu">
-                            <li><a class="nav-link" href="{{route('categoryList')}}">Category</a></li>
-                            <li><a class="nav-link" href="{{route('productAdd')}}">Add Product</a></li>
-                            <li><a class="nav-link" href="{{route('productList')}}">All Product List</a></li>
-                        </ul>
+                    <li>
+                        <a href="{{route('settingEdit')}}" class="nav-link "><i class="fas fa-cog"></i> <span>Setting</span></a> 
                     </li>
 
                 </ul>

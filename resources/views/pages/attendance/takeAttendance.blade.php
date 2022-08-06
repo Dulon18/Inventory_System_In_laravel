@@ -2,10 +2,10 @@
 @section('content')
 <section class="section">
             <div class="section-header">
-                <h1>Customer</h1>
+                <h1>Attendance</h1>
                 <div class="section-header-breadcrumb">
                     <div class="breadcrumb-item active"><a class="nav-link" href="#">Attendance</a></div>
-                    <div class="breadcrumb-item"> Edit Attendance</div>
+                    <div class="breadcrumb-item"> Take Attendance</div>
                 </div>
             </div>
             <!-- message Show start -->
@@ -29,7 +29,7 @@
                                 <div class="card-body">
                                     <div class="table-responsive">
                                             <a type="button" href="{{route('attendanceList')}}"class="btn btn-danger">Back</a>
-                                            <h5 class="text-right m-3">Today : {{date('dM Y')}}</h5>
+                                            <h5 class="text-right m-3">Today : {{date("l jS \of F Y || h:i:s A")}}</h5>
                                         <table class="table table-striped v_center" >
                                             <thead class="bg-primary">
                                                 <tr>
@@ -40,10 +40,8 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                            <form action="{{route('attendanceStore')}}" method="POST">
+                                            <form action="{{route('attendanceStore')}}" method="POST" enctype="multipart/form-data">
                                             @csrf
-                                            @method('put')
-
                                              @foreach($employees as $key=>$employee)
                                                 <tr>
                                                 <td>
@@ -55,8 +53,8 @@
                                                 </td>
                                                 <input type="hidden" name="emp_id[]" value="{{$employee->id}}">
                                                 <td>
-                                                        <input type="radio" name="attendance[{{$employee->id}}]" value="present" > Present
-                                                        <input type="radio" name="attendance[{{$employee->id}}]" value="absence"> Absence
+                                                        <input type="radio" name="attendance[{{$employee->id}}]" value="present" required> Present
+                                                        <input type="radio" name="attendance[{{$employee->id}}]" value="absence" required> Absence
                                                 </td>                  
                                                 
                                                 <input type="hidden" name="attendance_date"value="{{date('d/m/y')}}">

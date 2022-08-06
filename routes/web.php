@@ -7,6 +7,7 @@ use App\Http\Controllers\SupplierController;
 use App\Http\Controllers\SalaryController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\SettingController;
 use App\Http\Controllers\AttendanceController;
 use Illuminate\Support\Facades\Route;
 
@@ -103,8 +104,11 @@ Route::get('/attendance/take',[AttendanceController::class,'take'])->name('atten
 Route::post('/attendance/store',[AttendanceController::class,'store'])->name('attendanceStore');
 Route::get('/attendance/edit/{id}',[AttendanceController::class,'edit'])->name('attendanceEdit');
 Route::post('/attendance/update',[AttendanceController::class,'update'])->name('attendanceUpdate');
-// Route::get('/attendance/delete/{id}',[AttendanceController::class,'delete'])->name('attendanceDelete');
 
+//setting routes---------------------------------------------------------------------------------------------------------------------
+
+Route::get('/setting/edit',[SettingController::class,'edit'])->name('settingEdit');
+Route::post('/setting/update',[SettingController::class,'update'])->name('settingUpdate');
 
 
 
