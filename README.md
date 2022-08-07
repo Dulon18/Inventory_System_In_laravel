@@ -24,3 +24,7 @@
 
 ## Products list
 ![product](https://user-images.githubusercontent.com/80118217/183303865-618e7f5d-dc84-4529-b332-de33bf7bc944.JPG)
+
+## Customers List
+
+![customer](https://user-images.githubusercontent.com/80118217/183304071-c1bf2d14-9fdd-49de-89e0-65a67076ba22.JPG)
