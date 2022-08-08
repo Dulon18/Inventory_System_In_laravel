@@ -12,8 +12,8 @@
                         <a href="{{route('dashboard')}}" class="nav-link"><i class="fas fa-fire"></i><span>Dashboard</span></a>
                         
                     </li>
-
-                    <li class="menu-header"></li>
+    
+                    <li class="menu-header">Starter</li>
                     <li class="dropdown">
                         <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-users"></i><span>Employees</span></a>
                         <ul class="dropdown-menu">
@@ -25,8 +25,6 @@
                             </li>
                         </ul>
                     </li>
-
-                    <li class="menu-header">Starter</li>
                     <li class="dropdown">
                         <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-user"></i> <span>Customer</span></a>
                         <ul class="dropdown-menu">
@@ -61,7 +59,7 @@
                     </li>
 
                     <li class="dropdown">
-                        <a href="#" class="nav-link has-dropdown"><i class="fas fa-clipboard"></i> <span>Attendance</span></a>
+                        <a href="#" class="nav-link has-dropdown"><i class="	fas fa-file-archive"></i> <span>Attendance</span></a>
                         <ul class="dropdown-menu">
                             
                             <li><a class="nav-link" href="{{route('attendanceTake')}}">Take Attendance</a></li>
@@ -70,18 +68,29 @@
                     </li>
 
                     <li class="dropdown">
-                        <a href="#" class="nav-link has-dropdown"><i class="fas fa-clipboard"></i> <span>Sales Report</span></a>
+                        <a href="#" class="nav-link has-dropdown"><i class="fas fa-chart-line"></i> <span>Sales Report</span></a>
                         <ul class="dropdown-menu">
-                            <li><a class="nav-link" href="{{route('categoryList')}}">Category</a></li>
                             <li><a class="nav-link" href="{{route('productAdd')}}">Add Product</a></li>
                             <li><a class="nav-link" href="{{route('productList')}}">All Product List</a></li>
                         </ul>
                     </li>
 
+                    <li class="menu-header"></li>
+                    <li class="dropdown">
+                        <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-calculator"></i><span>POS</span></a>
+                        <ul class="dropdown-menu">
+                            <li class="">
+                                <a class="nav-link" href="{{route('employeeAdd')}}">Add Employee</a>
+                            </li>
+                            <li>
+                                <a class="nav-link" href="{{route('posList')}}">ManagePOS</a>
+                            </li>
+                        </ul>
+                    </li>
+                    
                     <li>
                         <a href="{{route('settingEdit')}}" class="nav-link "><i class="fas fa-cog"></i> <span>Setting</span></a> 
                     </li>
-
                 </ul>
            
             </aside>

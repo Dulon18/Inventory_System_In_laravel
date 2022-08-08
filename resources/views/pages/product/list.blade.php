@@ -22,7 +22,9 @@
                         <div class="col-12">
                             <div class="card">
                                 <div class="buttons m-3">
-                                    <a href="{{route('productAdd')}}" class="btn btn-primary text-right"><i class="fas fa-plus-circle"></i> Add New Product </a>      
+                                    <a href="{{route('productAdd')}}" class="btn btn-primary"><i class="fas fa-plus-circle"></i> Add New Product </a>
+                                    <a href="{{route('productExport')}}" class="btn btn-danger"><i class="fas fa-download"></i> Export</a> 
+                                    <a href="{{route('productImport')}}" class="btn btn-success"><i class="fas fa-arrow-up"></i> Import</a>       
                                 </div>
                                 <div class="card-body">
                                     <div class="table-responsive">

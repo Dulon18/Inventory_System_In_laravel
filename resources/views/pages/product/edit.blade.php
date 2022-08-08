@@ -100,7 +100,7 @@
                                 </div>
                                 <div class="card-footer text-right">
                                         <a type="button" href="{{route('productList')}}"class="btn btn-danger">Back</a>
-                                        <button class="btn btn-primary">Submit</button>
+                                        <button class="btn btn-primary">Save Change</button>
                                     </div>
                             </div>
                 </form>

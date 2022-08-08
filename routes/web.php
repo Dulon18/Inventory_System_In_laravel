@@ -9,6 +9,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\SettingController;
 use App\Http\Controllers\AttendanceController;
+use App\Http\Controllers\POSController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -109,6 +110,23 @@ Route::post('/attendance/update',[AttendanceController::class,'update'])->name('
 
 Route::get('/setting/edit',[SettingController::class,'edit'])->name('settingEdit');
 Route::post('/setting/update',[SettingController::class,'update'])->name('settingUpdate');
+
+// Export and Import route------------------------------------------------------------------------------------------------------
+
+Route::get('/product/import',[ProductController::class,'importfrom'])->name('productImport');
+Route::post('/product/import',[ProductController::class,'import'])->name('Import');
+Route::get('/product/export',[ProductController::class,'export'])->name('productExport');
+
+
+// POS(Point of Sales)---------------------------------------------------------------------------------------------------------
+
+Route::get('/pos/list',[POSController::class,'list'])->name('posList');
+
+
+
+
+
+
 
 
 

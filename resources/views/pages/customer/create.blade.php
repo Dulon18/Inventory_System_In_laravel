@@ -91,8 +91,11 @@
                                     
                                     <div class="form-group">
                                         <div class="mb-3">
+                                            
                                                 <label for="formFileMultiple" class="form-label">Image</label>
-                                                <input class="form-control" name="image" type="file" id="formFileMultiple" multiple  required="">
+                                                <input class="form-control" name="image" type="file" id="formFileMultiple image" multiple  required=""
+                                                onchange="readURL(this);">
+                                                <img  id="image" src="#" class="img-responsive m-3" alt=" Upload image">
                                         </div>
                                         </div>
                                 </div>
@@ -102,6 +105,20 @@
                                     </div>
                             </div>
                 </form>
-                        </div>
+</div>
+
+<script>
+    function readURL(input){
+        if(input.files && input.files[0])
+        {
+            var reader =new FileReader();
+            reader.onload=function(e){
+                $('#image').attr('src',e.target.result).width(80).height(80);
+            };
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+</script>
+
 </section>
 @endsection

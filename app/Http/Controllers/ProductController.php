@@ -1,7 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Maatwebsite\Excel\Facades\Excel;
+use App\Exports\ProductsExport;
+use App\Imports\ProductsImport;
 use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\Category;
@@ -108,4 +110,28 @@ class ProductController extends Controller
         Product::find($id)->delete();
         return redirect()->back()->with('success','Product Deleted Successfully..!!');
     }
+
+    //product file export....................................
+    public function export() 
+    {
+        return Excel::download(new ProductsExport, 'product.csv');
+    }
+
+    function importfrom()
+    {
+        return view('pages.product.import');
+    }
+
+    public function import(Request $request) 
+    {
+        $import=Excel::import(new ProductsImport,request()->file('import_file'));
+          if($import){
+            return redirect()->back()->with('success',' Product Imported Successfully..!!');
+          }
+          else{
+            return redirect()->back()->with('error',' Oops...Product is not Imported !!');
+          }     
+        
+    }
+     
 }
