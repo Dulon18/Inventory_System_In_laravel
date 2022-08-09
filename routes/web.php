@@ -10,6 +10,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\SettingController;
 use App\Http\Controllers\AttendanceController;
 use App\Http\Controllers\POSController;
+use App\Http\Controllers\CartController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -122,7 +123,13 @@ Route::get('/product/export',[ProductController::class,'export'])->name('product
 
 Route::get('/pos/list',[POSController::class,'list'])->name('posList');
 
+//cart routes-----------------------------------------------------------------------------------------------------------------------
+Route::post('/store/cart',[CartController::class,'store'])->name('addCart');
+Route::post('/update/cart/{id}',[CartController::class,'updateCart'])->name('updateCart');
+Route::get('/delete/cart/{id}',[CartController::class,'removeCart'])->name('removeCart');
 
+// Invoice.............
+Route::post('/invoice',[CartController::class,'createInvoice'])->name('createInvoice');
 
 
 

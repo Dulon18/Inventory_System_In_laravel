@@ -77,15 +77,7 @@
 
                     <li class="menu-header"></li>
                     <li class="dropdown">
-                        <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-calculator"></i><span>POS</span></a>
-                        <ul class="dropdown-menu">
-                            <li class="">
-                                <a class="nav-link" href="{{route('employeeAdd')}}">Add Employee</a>
-                            </li>
-                            <li>
-                                <a class="nav-link" href="{{route('posList')}}">ManagePOS</a>
-                            </li>
-                        </ul>
+                        <a href="{{route('posList')}}" class="nav-link"><i class="fas fa-calculator"></i><span>POS</span></a>
                     </li>
                     
                     <li>

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\Customer;
 use App\Models\Category;
+
 class POSController extends Controller
 {
     public function __construct()
@@ -19,4 +20,5 @@ class POSController extends Controller
         $customers=Customer::all();
         return view('pages.pos.list',compact('products','customers'));
     }
+
 }
