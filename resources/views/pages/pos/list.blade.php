@@ -20,8 +20,8 @@
                             <!--  total calculation start-->
                             <div class="col-12 col-md-12 col-lg-5">
                             <div class="card profile-widget">
-                            <p class="text-center"> Cart </p>
-                        <div class="pricing pricing-highlight">  
+                            <h4 class="text-center bg-primary m-3 p-2 text-white"> Cart </h4>
+                        <div class="pricing pricing-highlight m-3">  
                             <div class="pricing-padding">
                                 <div class="pricing-details">
                                     <div class="pricing-item">
@@ -90,7 +90,7 @@
                                         @endphp
                                          </div>
                                          @if ($errors->any())
-                                                <div class="alert alert-danger">
+                                                <div class="alert alert-danger "> <button type="button" class="close" data-bs-dismiss="alert">x</button>
                                                     <ul>
                                                         @foreach ($errors->all() as $error)
                                                             <li>{{ $error }}</li>
@@ -99,7 +99,7 @@
                                                 </div>
                                             @endif
                                             <select class="form-control" name="cus_id">
-                                            <option>Select Customer</option>
+                                            <option aria-readonly="">Select Customer</option>
                                             @foreach($customers as $customer)
                                             <option value="{{$customer->id}}">{{$customer->name}}</option>
                                             @endforeach

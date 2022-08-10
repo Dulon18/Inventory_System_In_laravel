@@ -11,6 +11,7 @@ use App\Http\Controllers\SettingController;
 use App\Http\Controllers\AttendanceController;
 use App\Http\Controllers\POSController;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\OrderController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -128,11 +129,13 @@ Route::post('/store/cart',[CartController::class,'store'])->name('addCart');
 Route::post('/update/cart/{id}',[CartController::class,'updateCart'])->name('updateCart');
 Route::get('/delete/cart/{id}',[CartController::class,'removeCart'])->name('removeCart');
 
-// Invoice.............
+// Invoice----------------------------------------------------------------------------------------------------------------------------
 Route::post('/invoice',[CartController::class,'createInvoice'])->name('createInvoice');
+Route::post('/invoice/store',[CartController::class,'storeInvoice'])->name('invoiceStore');
 
+//order routes---------------------------------------------------------------------------------------------------------------------
 
-
+Route::get('/order/pending',[OrderController::class,'pendingOrder'])->name('orderPending');
 
 
 

@@ -8,8 +8,21 @@
                     <div class="breadcrumb-item active"><a href="#">Dashboard</a></div>
                     <div class="breadcrumb-item">Invoice</div>
                 </div>
-            </div>
-
+            </div>              
+            <!-- message Show start -->
+              @if(session()->has('success'))
+                    <p class="alert alert-success">
+                      <button type="button" class="close" data-bs-dismiss="alert">x</button>
+                      {{session()->get('success')}}</p>
+                  @endif
+                    <!-- message Show start -->
+                    @if(session()->has('error'))
+                    <p class="alert alert-danger">
+                      <button type="button" class="close" data-bs-dismiss="alert">x</button>
+                      {{session()->get('error')}}</p>
+                  @endif
+                <!-- message Show end -->
+                <!-- message Show end -->
             <div class="section-body">
                 <div class="invoice">
                     <div class="invoice-print">
@@ -17,41 +30,40 @@
                             <div class="col-lg-12">
                                 <div class="invoice-title">
                                     <h2>Invoice</h2>
-                                    <div class="invoice-number">Order #12345</div>
+                                    @php 
+                                    $order=DB::table('orders')->where('id')->first();
+                                    @endphp
+                                    <div class="invoice-number">Order #{{$order++}}</div>
                                 </div>
                                 <hr>
                                 <div class="row">
                                     <div class="col-md-6">
                                         <address>
-                                            <strong>Billed To:</strong><br>
-                                            Michelle Green<br>
-                                            1234 Main<br>
-                                            Apt. 4B<br>
-                                            Bogor Barat, USA
+                                            <strong>Billed To:{{$customer->name}}</strong><br>
+                                           
+                                            {{$customer->address}}<br>
+                                            {{$customer->city}}<br>
+                                            {{$customer->phone}}<br>
+                                      
                                         </address>
                                     </div>
                                     <div class="col-md-6 text-md-right">
                                         <address>
-                                            <strong>Shipped To:</strong><br>
-                                            Muhamad Nauval Azhar<br>
-                                            1234 Main<br>
-                                            Apt. 4B<br>
-                                            Bogor Barat, USA
+                                            <strong>Shipped To:  {{$customer->name}}</strong><br>
+                                           
+                                            {{$customer->address}},  {{$customer->city}}<br>
+                                            Phone: {{$customer->phone}}<br>
                                         </address>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-md-6">
-                                        <address>
-                                            <strong>Payment Method:</strong><br>
-                                            Visa ending **** 4242<br>
-                                            Michelle@Green.com
-                                        </address>
+                                        
                                     </div>
                                     <div class="col-md-6 text-md-right">
                                         <address>
                                             <strong>Order Date:</strong><br>
-                                            September 19, 2018<br><br>
+                                           {{date('dD/M/Y')}}<br><br>
                                         </address>
                                     </div>
                                 </div>
@@ -71,53 +83,40 @@
                                             <th class="text-center">Quantity</th>
                                             <th class="text-right">Totals</th>
                                         </tr>
+                                        @php 
+                                        $no=1;
+                                        @endphp 
+                                        @foreach($content as $con)
                                         <tr>
-                                            <td>1</td>
-                                            <td>Mouse Wireless</td>
-                                            <td class="text-center">$10.99</td>
-                                            <td class="text-center">1</td>
-                                            <td class="text-right">$10.99</td>
+                                            <td>{{$no++}}</td>
+                                            <td>{{$con->name}}</td>
+                                            <td class="text-center">{{$con->price}}</td>
+                                            <td class="text-center">{{$con->qty}}</td>
+                                            <td class="text-right">{{$con->price * $con->qty}}</td>
                                         </tr>
-                                        <tr>
-                                            <td>2</td>
-                                            <td>Keyboard Wireless</td>
-                                            <td class="text-center">$20.00</td>
-                                            <td class="text-center">3</td>
-                                            <td class="text-right">$60.00</td>
-                                        </tr>
-                                        <tr>
-                                            <td>3</td>
-                                            <td>Headphone Blitz TDR-3000</td>
-                                            <td class="text-center">$600.00</td>
-                                            <td class="text-center">1</td>
-                                            <td class="text-right">$600.00</td>
-                                        </tr>
+                                     @endforeach
+                                      
                                     </table>
                                 </div>
                                 <div class="row mt-4">
                                     <div class="col-lg-8">
-                                        <div class="section-title">Payment Method</div>
-                                        <p class="section-lead">The payment method that we provide is to make it easier for you to pay invoices.</p>
-                                        <div class="images">
-                                            <img src="assets/img/visa.png" alt="visa">
-                                            <img src="assets/img/jcb.png" alt="jcb">
-                                            <img src="assets/img/mastercard.png" alt="mastercard">
-                                            <img src="assets/img/paypal.png" alt="paypal">
-                                        </div>
                                     </div>
                                     <div class="col-lg-4 text-right">
                                         <div class="invoice-detail-item">
                                             <div class="invoice-detail-name">Subtotal</div>
-                                            <div class="invoice-detail-value">$670.99</div>
+                                            <div class="invoice-detail-value">{{Cart::subtotal()}}</div>
                                         </div>
+                                        @php 
+                                        $shipping =100;                                    
+                                        @endphp
                                         <div class="invoice-detail-item">
-                                            <div class="invoice-detail-name">Shipping</div>
-                                            <div class="invoice-detail-value">$15</div>
+                                            <div class="invoice-detail-name">VAT(21%)</div>
+                                            <div class="invoice-detail-value">{{Cart::tax()}}</div>
                                         </div>
                                         <hr class="mt-2 mb-2">
                                         <div class="invoice-detail-item">
                                             <div class="invoice-detail-name">Total</div>
-                                            <div class="invoice-detail-value invoice-detail-value-lg">$685.99</div>
+                                            <div class="invoice-detail-value invoice-detail-value-lg">{{ Cart::total()}}</div>
                                         </div>
                                     </div>
                                 </div>
@@ -126,13 +125,68 @@
                     </div>
                     <hr>
                     <div class="text-md-right">
-                        <div class="float-lg-left mb-lg-0 mb-3">
-                            <button class="btn btn-primary btn-icon icon-left"><i class="fas fa-credit-card"></i> Process Payment</button>
-                            <button class="btn btn-danger btn-icon icon-left"><i class="fas fa-times"></i> Cancel</button>
-                        </div>
-                        <button class="btn btn-warning btn-icon icon-left"><i class="fas fa-print"></i> Print</button>
+                        <a href="{{route('posList')}}" class="btn btn-danger btn-icon icon-left"><i class="fas fa-times"></i> Cancel</a>
+                        <button class="btn btn-warning btn-icon icon-left" onclick="window.print()"><i class="fas fa-print"></i> Print</button>
+                        <button type="submit" class="btn btn-primary btn-icon icon-left" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fas fa-credit-card"></i> Process Payment</button>
                     </div>
                 </div>
             </div>
         </section>
+
+        <!-- modal start here---------------------------------->
+<div class="modal fade" tabindex="-1" role="dialog" id="exampleModal">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                    <form action="{{route('invoiceStore')}}" class="needs-validation" novalidate="" method="POST">
+                      @csrf
+                        <div class="modal-header bg-primary text-white">
+                            <h5 class="modal-title mb-2">Payment Process Details</h5>
+                            <button class="close text-white" data-bs-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+
+                        </div>
+                        <div class="modal-body">
+                        <h5 class="text-right">Total : {{Cart::Total()}}</h5>
+                        <div class="form-group">
+                                        <label for="inputAddress">Payment Process</label>
+                                        <select class="form-select" aria-label="Default select example" name="payment_status">
+                                            <option value="Hand Cash">Hand Cash</option>
+                                            <option value="Cheque">Cheque</option>
+                                            <option value="Due">Due</option>
+                                            </select>
+                                    </div>
+                                 <div class="form-row">
+                                        <div class="form-group col-md-6">
+                                            <label for="inputPassword4">Pay Amount</label>
+                                            <input type="text" name="pay" class="form-control" id="inputPassword4" placeholder="Pay">
+                                         
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                            <label for="inputPassword4">Due Amount</label>
+                                            <input type="text" name="due" class="form-control" id="inputPassword4" placeholder="Due">
+                                        </div>
+                                    </div>       
+                                </div>
+
+                                <input type="hidden" name="customer_id" value="{{$customer->id}}">
+                                <input type="hidden" name="order_date" value="{{date('d-m-y')}}">
+                                <input type="hidden" name="order_status" value="pending">
+                                <input type="hidden" name="total_product" value="{{Cart::count()}}">
+                                <input type="hidden" name="sub_total" value="{{Cart::subtotal()}}">
+                                <input type="hidden" name="vat" value="{{Cart::tax()}}">
+                                <input type="hidden" name="sub_total" value="{{Cart::subtotal()}}">
+                                <input type="hidden" name="total" value="{{Cart::total()}}">
+
+                                <div class="modal-footer bg-whitesmoke br">
+                            <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </div>
+                            </div>
+                        </div>
+                </form>
+                    </div>
+                </div>
+            </div>
+        </div>
 @endsection

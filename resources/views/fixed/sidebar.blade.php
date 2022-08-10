@@ -8,7 +8,7 @@
                 </div>
                 <ul class="sidebar-menu">
                     <li class="menu-header">Dashboard</li>
-                    <li class="dropdown active">
+                    <li class="dropdown">
                         <a href="{{route('dashboard')}}" class="nav-link"><i class="fas fa-fire"></i><span>Dashboard</span></a>
                         
                     </li>
@@ -64,6 +64,14 @@
                             
                             <li><a class="nav-link" href="{{route('attendanceTake')}}">Take Attendance</a></li>
                             <li><a class="nav-link" href="{{route('attendanceList')}}">All Attendance</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown">
+                        <a href="#" class="nav-link has-dropdown"><i class="fas fa-chart-line"></i> <span>Order</span></a>
+                        <ul class="dropdown-menu">
+                            <li><a class="nav-link" href="{{route('orderPending')}}">Pending Orders</a></li>
+                            <li><a class="nav-link" href="{{route('productList')}}">Product List</a></li>
                         </ul>
                     </li>
 
