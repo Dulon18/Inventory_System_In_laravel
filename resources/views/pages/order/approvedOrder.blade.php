@@ -14,11 +14,6 @@
                       <button type="button" class="close" data-bs-dismiss="alert">x</button>
                       {{session()->get('success')}}</p>
                   @endif
-                  @if(session()->has('error'))
-                    <p class="alert alert-danger">
-                      <button type="button" class="close" data-bs-dismiss="alert">x</button>
-                      {{session()->get('error')}}</p>
-                  @endif
                 <!-- message Show end -->           
 
             <!-- table start -->
@@ -28,7 +23,7 @@
                             <div class="card">
                                 <div class="card-body">
                                     <div class="table-responsive">
-                                        <table class="table table-striped v_center" id="table-1">
+                                        <table class="table" id="table-1">
                                             <thead class="bg-primary">
                                                 <tr>
                                                 <th class="text-white">#No.</th>
@@ -42,15 +37,17 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                            @foreach($pending as $key=>$order)
+                                            @foreach($approved as $key=>$order)
                                                 <tr>
-                                                <td>{{$key+1}}</td>
+                                                <td>
+                                                    {{$key+1}}
+                                                </td>
                                                 <td>{{$order->name}}</td>
                                                 <td>{{$order->order_date}}</td>                                            
                                                 <td>{{$order->total_product}}</td>
                                                 <td>{{$order->total}}</td>
                                                 <td>{{$order->payment_status}}</td>
-                                                <td>{{$order->order_status}}</td>
+                                                <td class="badge badge-success mt-2">{{$order->order_status}}</td>
                                                 <td>
                                                 <a href="{{route('viewOrder',$order->id)}}" class="btn btn-secondary">View</a>
                                                 </td>                                               

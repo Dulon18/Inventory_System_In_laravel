@@ -17,10 +17,10 @@
                             </div>
                             <div class="card-wrap">
                                 <div class="card-header">
-                                    <h4>Total Admin</h4>
+                                    <h4>Total Customer</h4>
                                 </div>
                                 <div class="card-body">
-                                    10
+                                    {{$count['customer']}}
                                 </div>
                             </div>
                         </div>
@@ -32,10 +32,10 @@
                             </div>
                             <div class="card-wrap">
                                 <div class="card-header">
-                                    <h4>News</h4>
+                                    <h4>Total Employee</h4>
                                 </div>
                                 <div class="card-body">
-                                    42
+                                {{$count['employee']}}
                                 </div>
                             </div>
                         </div>
@@ -47,10 +47,10 @@
                             </div>
                             <div class="card-wrap">
                                 <div class="card-header">
-                                    <h4>Reports</h4>
+                                    <h4>Total Supplier</h4>
                                 </div>
                                 <div class="card-body">
-                                    1,201
+                                {{$count['supplier']}}
                                 </div>
                             </div>
                         </div>
@@ -62,14 +62,61 @@
                             </div>
                             <div class="card-wrap">
                                 <div class="card-header">
-                                    <h4>Online Users</h4>
+                                    <h4>Total Product</h4>
                                 </div>
                                 <div class="card-body">
-                                    47
+                                {{$count['product']}}
                                 </div>
                             </div>
                         </div>
                     </div>                  
+
+                    <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                        <div class="card card-statistic-1">
+                            <div class="card-icon bg-success">
+                                <i class="fas fa-circle"></i>
+                            </div>
+                            <div class="card-wrap">
+                                <div class="card-header">
+                                    <h4>Total Order</h4>
+                                </div>
+                                <div class="card-body">
+                                {{$count['order']}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                        <div class="card card-statistic-1">
+                            <div class="card-icon bg-success">
+                                <i class="fas fa-circle"></i>
+                            </div>
+                            <div class="card-wrap">
+                                <div class="card-header">
+                                    <h4>Pending Order</h4>
+                                </div>
+                                <div class="card-body">
+                                {{$pendingOrder}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                        <div class="card card-statistic-1">
+                            <div class="card-icon bg-success">
+                                <i class="fas fa-circle"></i>
+                            </div>
+                            <div class="card-wrap">
+                                <div class="card-header">
+                                    <h4>Order Deliverd</h4>
+                                </div>
+                                <div class="card-body">
+                                {{$deliveredOrder}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="row">
                     <div class="col-lg-12">
@@ -88,17 +135,17 @@
                                 <div class="statistic-details mb-sm-4">
                                     <div class="statistic-details-item">
                                         <span class="text-muted"><span class="text-primary"><i class="fas fa-caret-up"></i></span> 7%</span>
-                                        <div class="detail-value">$243</div>
+                                        <div class="detail-value">{{$today}}</div>
                                         <div class="detail-name">Today's Sales</div>
                                     </div>
                                     <div class="statistic-details-item">
                                         <span class="text-muted"><span class="text-danger"><i class="fas fa-caret-down"></i></span> 23%</span>
-                                        <div class="detail-value">$2,902</div>
+                                        <div class="detail-value">{{$yesterday}}</div>
                                         <div class="detail-name">This Week's Sales</div>
                                     </div>
                                     <div class="statistic-details-item">
                                         <span class="text-muted"><span class="text-primary"><i class="fas fa-caret-up"></i></span>9%</span>
-                                        <div class="detail-value">$12,821</div>
+                                        <div class="detail-value">${{$lastWeek}}</div>
                                         <div class="detail-name">This Month's Sales</div>
                                     </div>
                                     <div class="statistic-details-item">

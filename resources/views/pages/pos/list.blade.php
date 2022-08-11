@@ -16,8 +16,13 @@
                 <!-- message Show end -->          
             <!-- table start -->
             <div class="section-body">
+                <div class="text-right">
+                <a href="{{route('orderPending')}}" class="btn btn-success">Pending List</a>
+                </div>
+           
                     <div class="row mt-sm-4">
                             <!--  total calculation start-->
+                            
                             <div class="col-12 col-md-12 col-lg-5">
                             <div class="card profile-widget">
                             <h4 class="text-center bg-primary m-3 p-2 text-white"> Cart </h4>

@@ -71,7 +71,7 @@
                         <a href="#" class="nav-link has-dropdown"><i class="fas fa-chart-line"></i> <span>Order</span></a>
                         <ul class="dropdown-menu">
                             <li><a class="nav-link" href="{{route('orderPending')}}">Pending Orders</a></li>
-                            <li><a class="nav-link" href="{{route('productList')}}">Product List</a></li>
+                            <li><a class="nav-link" href="{{route('approveList')}}">Approved List</a></li>
                         </ul>
                     </li>
 

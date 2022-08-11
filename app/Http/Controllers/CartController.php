@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Customer;
 use App\Models\Order;
+use App\Models\Order_details;
 use Illuminate\Http\Request;
 use Cart;
 use Illuminate\Support\Facades\DB;
@@ -54,40 +55,42 @@ class CartController extends Controller
     public function storeInvoice(Request $request)
     {
         //dd($request);
-           $data=array();
-           $data['customer_id']=$request->customer_id;
-           $data['order_date']=$request->order_date;
-           $data['order_status']=$request->order_status;
-           $data['total_product']=$request->total_product;
-           $data['sub_total']=$request->sub_total;
-           $data['vat']=$request->vat;
-           $data['total']=$request->total;
-           $data['payment_status']=$request->payment_status;
-           $data['pay']=$request->pay;
-           $data[ 'due']=$request->due;
-      
-        //dd($data);
-        $order_id=DB::table('orders')->insertGetId($data);
-        $contents=Cart::content();
-        $order=array();
-        foreach($contents as $content){
-            $order['order_id']=$order_id;
-            $order['product_id']=$content->id;
-            $order['quantity']=$content->qty;
-            $order['unitcost']=$content->price;
-            $order['total']=$content->total;
-
-            $insert=DB::table('order_details')->insert($order);
-        }
-        if($insert){
-            Cart::destroy();
-            return redirect()->route('posList')->with('success','Deliver product Now..!!');
-           
-        }
-        else
-        {
-            return redirect()->back()->with('error',' Failed');
-        }
+        
+        $data=array();
+        $data['customer_id']=$request->customer_id;
+        $data['order_date']=$request->order_date;
+        $data['order_status']=$request->order_status;
+        $data['total_product']=$request->total_product;
+        $data['sub_total']=$request->sub_total;
+        $data['vat']=$request->vat;
+        $data['total']=$request->total;
+        $data['payment_status']=$request->payment_status;
+        $data['pay']=$request->pay;
+        $data[ 'due']=$request->due;
+   
+     //dd($data);
+     $order_id=DB::table('orders')->insertGetId($data);
+     $contents=Cart::content();
+     foreach($contents as $content){
+         $insert=Order_details::create(
+            [
+                'order_id'=>$order_id,
+                'product_id'=>$content->id,
+                'quantity'=>$content->qty,
+                'unitcost'=>$content->price,
+                'total'=>$content->total
+            ]
+         );
+     }
+     if($insert){
+         Cart::destroy();
+         return redirect()->route('posList')->with('success','Deliver product Now..!!');
+        
+     }
+     else
+     {
+         return redirect()->back()->with('error',' Failed');
+     }
         
     }
 }

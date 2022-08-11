@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\CustomerController;
@@ -32,10 +33,8 @@ Route::post('/dologin',[LoginController::class,'doLogin'])->name('dologin');
 
 Route::group(['middleware'=>['auth','admin']],function ()
 {
-    Route::get('/',function(){
-        return view('pages.dashboard');
-    })->name('dashboard');   
-
+    Route::get('/',[DashboardController::class,'dashboard'])->name('dashboard');
+  
 //admin logout
  Route::get('/logout',[LoginController::class,'logout'])->name('admin.logout');
 
@@ -136,8 +135,9 @@ Route::post('/invoice/store',[CartController::class,'storeInvoice'])->name('invo
 //order routes---------------------------------------------------------------------------------------------------------------------
 
 Route::get('/order/pending',[OrderController::class,'pendingOrder'])->name('orderPending');
-
-
+Route::get('/order/view/{id}',[OrderController::class,'viewOrder'])->name('viewOrder');
+Route::get('/order/approveList',[OrderController::class,'approveList'])->name('approveList');
+Route::get('/orderDone/{id}',[OrderController::class,'orderDone'])->name('orderDone');
 
 
 });
