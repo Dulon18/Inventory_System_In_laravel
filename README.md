@@ -51,4 +51,5 @@
 
 ## Dashboard
 
-![dashboard](https://user-images.githubusercontent.com/80118217/184342736-5b7e4dc1-c52c-4124-9c84-932e92ff5435.JPG)
+![dashboard](https://user-images.githubusercontent.com/80118217/184343036-d7d3b26d-be84-40c2-a9ba-9a4737ea15e2.JPG)
+
