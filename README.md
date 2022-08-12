@@ -48,3 +48,7 @@
 ## Approved Order List
 
 ![approved](https://user-images.githubusercontent.com/80118217/184342613-5e6718dd-a655-4105-851e-d29c0cf89203.JPG)
+
+## Dashboard
+
+![dashboard](https://user-images.githubusercontent.com/80118217/184342736-5b7e4dc1-c52c-4124-9c84-932e92ff5435.JPG)
