@@ -41,7 +41,10 @@
 
 ![payment](https://user-images.githubusercontent.com/80118217/184342297-a724a42d-47cc-4f0c-a98b-1d8f21fdad0a.JPG)
 
-## Pending List
+## Pending Order List
 
 ![pending](https://user-images.githubusercontent.com/80118217/184342476-c1f03518-7b6c-4b5d-99a6-550dd0a58d10.JPG)
 
+## Approved Order List
+
+![approved](https://user-images.githubusercontent.com/80118217/184342613-5e6718dd-a655-4105-851e-d29c0cf89203.JPG)
