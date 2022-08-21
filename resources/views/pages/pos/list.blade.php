@@ -103,13 +103,16 @@
                                                     </ul>
                                                 </div>
                                             @endif
-                                            <select class="form-control" name="cus_id">
+                                            <select class="form-control select2" name="cus_id" required>
                                             <option aria-readonly="">Select Customer</option>
                                             @foreach($customers as $customer)
                                             <option value="{{$customer->id}}">{{$customer->name}}</option>
                                             @endforeach
                                            
                                         </select>
+                                        <div class="invalid-feedback">
+                                                Oh no! supplier is required !!...
+                                            </div>
                                         
                                     </div>                                    
                               <button type="submit" class="btn btn-success">Create Invoice</button>

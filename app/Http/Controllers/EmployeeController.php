@@ -25,22 +25,22 @@ class EmployeeController extends Controller
     function store(Request $request)
     {
          
-    //     $request->validate([
-    //         'name' => 'required|max:30',
-    //         'email' => 'required|unique:employees|max:255',
-    //         'nid_no' => 'required|unique:employees|max:255',
-    //         'address' => 'required',
-    //         'phone' => 'required|min:13|max:13',
-    //         'salary' => 'required',
-    //         'city' => 'required',
-    //         'image' => 'required',
-    //         'publish_at' => 'nullable|date',
-    //     ],
-    //      [
-    //         'name.required' => 'Employee name is required',
-    //         'email.required' => 'A email should be required & unique',
-    //     ]
-    // );
+        $request->validate([
+            'name' => 'required|max:30',
+            'email' => 'required|unique:employees|max:255',
+            'nid_no' => 'required|unique:employees|max:255',
+            'address' => 'required',
+            'phone' => 'required|min:13|max:13',
+            'salary' => 'required',
+            'city' => 'required',
+            'image' => 'required',
+            'publish_at' => 'nullable|date',
+        ],
+         [
+            'name.required' => 'Employee name is required',
+            'email.required' => 'A email should be required & unique',
+        ]
+    );
 
 
         $filename=null;

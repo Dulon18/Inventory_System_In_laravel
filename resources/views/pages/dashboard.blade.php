@@ -124,34 +124,39 @@
                             <div class="card-header">
                                 <h4>Statistics</h4>
                                 <div class="card-header-action">
-                                    <button class="btn btn-sm btn-outline-secondary mr-1" id="one_month">1M</button>
+                                {{-- <button class="btn btn-sm btn-outline-secondary mr-1" id="one_month">1M</button>
                                     <button class="btn btn-sm btn-outline-secondary mr-1" id="six_months">6M</button>
                                     <button class="btn btn-sm btn-outline-secondary mr-1" id="one_year" class="active">1Y</button>
                                     <button class="btn btn-sm btn-outline-secondary mr-1" id="ytd">YTD</button>
-                                    <button class="btn btn-sm btn-outline-secondary" id="all">ALL</button>
+                                    <button class="btn btn-sm btn-outline-secondary" id="all">ALL</button> --}}
                                 </div>
                             </div>
                             <div class="card-body">
                                 <div class="statistic-details mb-sm-4">
                                     <div class="statistic-details-item">
-                                        <span class="text-muted"><span class="text-primary"><i class="fas fa-caret-up"></i></span> 7%</span>
+                                        <span class="text-muted"><span class="text-primary"><i class="fas fa-caret-up"></i></span>%</span>
                                         <div class="detail-value">{{$today}}</div>
                                         <div class="detail-name">Today's Sales</div>
                                     </div>
                                     <div class="statistic-details-item">
-                                        <span class="text-muted"><span class="text-danger"><i class="fas fa-caret-down"></i></span> 23%</span>
+                                        <span class="text-muted"><span class="text-danger"><i class="fas fa-caret-down"></i></span>%</span>
                                         <div class="detail-value">{{$yesterday}}</div>
-                                        <div class="detail-name">This Week's Sales</div>
+                                        <div class="detail-name">This Yesterday's Sales</div>
                                     </div>
                                     <div class="statistic-details-item">
-                                        <span class="text-muted"><span class="text-primary"><i class="fas fa-caret-up"></i></span>9%</span>
-                                        <div class="detail-value">${{$lastWeek}}</div>
-                                        <div class="detail-name">This Month's Sales</div>
+                                        <span class="text-muted"><span class="text-danger"><i class="fas fa-caret-down"></i></span>%</span>
+                                        <div class="detail-value">{{$lastWeek}} BDT</div>
+                                        <div class="detail-name">This Week's Sales amount </div>
+                                    </div>
+                                    <div class="statistic-details-item">
+                                        <span class="text-muted"><span class="text-primary"><i class="fas fa-caret-up"></i></span>%</span>
+                                        <div class="detail-value">{{$data}} BDT</div>
+                                        <div class="detail-name">This Month's Sales amount</div>
                                     </div>
                                     <div class="statistic-details-item">
                                         <span class="text-muted"><span class="text-primary"><i class="fas fa-caret-up"></i></span> 19%</span>
-                                        <div class="detail-value">$92,142</div>
-                                        <div class="detail-name">This Year's Sales</div>
+                                        <div class="detail-value">{{$data}} BDT</div>
+                                        <div class="detail-name">This Year's Sales amount</div>
                                     </div>
                                 </div>
                                 <div id="apex-timeline-chart"></div>

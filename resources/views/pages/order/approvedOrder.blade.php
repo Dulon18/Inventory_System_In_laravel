@@ -5,7 +5,7 @@
                 <h1>Orders</h1>
                 <div class="section-header-breadcrumb">
                     <div class="breadcrumb-item active"><a class="nav-link" href="#">Orders</a></div>
-                    <div class="breadcrumb-item"> Pending Order</div>
+                    <div class="breadcrumb-item"> Approved Order</div>
                 </div>
             </div>
             <!-- message Show start -->
