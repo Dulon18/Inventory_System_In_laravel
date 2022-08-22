@@ -46,6 +46,13 @@ class CartController extends Controller
     // invoice-------------
     public function createInvoice(Request $request)
     {   
+
+        $request->validate([
+            'cus_id' => 'required',
+        ],[
+            'cus_id.required'=>"Select customer or you are not allowed to create invoice"
+        ]);
+
             $cus_id=$request->cus_id;
             $customer=Customer::where('id',$cus_id)->first();
             $content=Cart::content();

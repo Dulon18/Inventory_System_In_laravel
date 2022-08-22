@@ -110,10 +110,6 @@
                                             @endforeach
                                            
                                         </select>
-                                        <div class="invalid-feedback">
-                                                Oh no! supplier is required !!...
-                                            </div>
-                                        
                                     </div>                                    
                               <button type="submit" class="btn btn-success">Create Invoice</button>
                               </form>                             
