@@ -3,14 +3,14 @@
 <h1 align="center">Inventory Management System</h1>
 
 
-## #Login Page
+## Login Page
 
 <p align="center">
 <img width="300px" height="300px" src="https://user-images.githubusercontent.com/80118217/182118383-90cdb0e7-0458-44fc-86b7-f829c73d1014.JPG"/>
 </p>
 
 
-## #Employee Create Form
+## Employee Create Form
 
 <p align="center">
 <img src="https://user-images.githubusercontent.com/80118217/182120495-eabeb2bb-f6c9-4f48-94e2-6a3c65a14156.JPG">
