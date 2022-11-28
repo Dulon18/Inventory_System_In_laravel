@@ -47,3 +47,10 @@
 
 ![dashboard](https://user-images.githubusercontent.com/80118217/184343036-d7d3b26d-be84-40c2-a9ba-9a4737ea15e2.JPG)
 
+
+## Installation Instructions
+- Clone the repo.
+- Run 'composer install'
+- Run 'cp .env.example .env'
+- Run 'php artisan migrate'
+- Run 'php artisan serve'
