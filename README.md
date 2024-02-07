@@ -25,7 +25,7 @@
 
 ![pos](https://user-images.githubusercontent.com/80118217/184341604-8765ef84-8776-4111-a197-766544b887ca.JPG)
 
-## Invoice(pending order)
+## Invoice (pending order)
 
 ![invoice](https://user-images.githubusercontent.com/80118217/184342103-5dede9cb-9515-40aa-8ce1-04dce3b95656.JPG)
 
